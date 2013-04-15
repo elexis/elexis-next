@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pde version="3.5"?>
+
+<product name="Elexis OpenSource" id="ch.elexis.core.application.product" application="ch.elexis.core.data.ElexisApp" version="2.3.0_alpha" useFeatures="false" includeLaunchers="true">
+
+
+   <configIni use="default">
+   </configIni>
+
+   <launcherArgs>
+      <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts</vmArgsMac>
+   </launcherArgs>
+
+   <windowImages i16="/ch.elexis.core.application/rsc/elexis2_16.gif" i32="/ch.elexis.core.application/rsc/elexis32_2.gif" i48="/ch.elexis.core.application/rsc/elexis48.gif"/>
+
+   <splash
+      location="ch.elexis.core.application" />
+   <launcher>
+      <solaris/>
+      <win useIco="false">
+         <bmp/>
+      </win>
+   </launcher>
+
+
+   <vm>
+   </vm>
+
+
+   <plugins>
+   </plugins>
+
+
+</product>

@@ -1,0 +1,4 @@
+[1271] replacement of driver on November 17, 2012 - new version 9.2.1002
+
+Original Treiber wurde am 5. Juli 2010 durch neue Version ersetzt.
+- postgresql.jar is http://jdbc.postgresql.org/download/postgresql-8.4-701.jdbc4.jar

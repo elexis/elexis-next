@@ -1,0 +1,11 @@
+NOT CONSIDERED TO BE PUBLIC YET
+
+15.4.2013 - M. Descher - Start of slight refactorings
+	- separated rsc/icons out into ch.elexis.core.icons
+		- renaming in class files and renaming in plugin.xml
+	- removed Plafs.java
+	- extracted product configuration into ch.elexis.core.application
+	- generated initial repo structure and elexis-next on github
+	- updated mysql jdbc connector to 5.1.24
+	- reset version to 2.1.3 bottom
+	- removed classpath entry for /bin and . in ch.elexis.core.data

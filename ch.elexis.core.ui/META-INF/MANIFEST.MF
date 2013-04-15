@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Elexis Core UI
+Bundle-SymbolicName: ch.elexis.core.ui
+Bundle-Version: 2.3.0.dev-qualifier
+Bundle-Activator: ch.elexis.core.ui.Activator
+Bundle-Vendor: elexis.info
+Require-Bundle: org.eclipse.core.runtime
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ActivationPolicy: lazy

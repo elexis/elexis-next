@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Elexis Open Source Application
+Bundle-SymbolicName: ch.elexis.core.application;singleton:=true
+Bundle-Version: 2.3.0.dev-qualifier
+Bundle-Vendor: elexis.info
+Bundle-Localization: plugin
+Require-Bundle: ch.elexis.core.data;bundle-version="2.3.0",
+ org.eclipse.core.runtime,
+ org.eclipse.ui;bundle-version="3.8.2"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ActivationPolicy: lazy
