@@ -20,4 +20,4 @@ NOT CONSIDERED TO BE PUBLIC YET
 	- extraction of preferences, views, dialogs into ch.elexis.core.ui
 	- introduction of R.class
 	- moved preference constants defined in ui preference pages to PreferenceConstants
--- COMMIT IN SEPARATE BRANCH -- does not compile at current state
+-- COMMIT IN SEPARATE BRANCH -- does not compile at current state --> #1524
