@@ -1,6 +1,7 @@
 NOT CONSIDERED TO BE PUBLIC YET
 
 15.4.2013 - M. Descher - Start of slight refactorings
+	- initial copy of ch.elexis based on state of Thu, 11 Apr 2013
 	- separated rsc/icons out into ch.elexis.core.icons
 		- renaming in class files and renaming in plugin.xml
 	- removed Plafs.java
@@ -9,3 +10,8 @@ NOT CONSIDERED TO BE PUBLIC YET
 	- updated mysql jdbc connector to 5.1.24
 	- reset version to 2.1.3 bottom
 	- removed classpath entry for /bin and . in ch.elexis.core.data
+	- merged CS [1549] provide access to selected Prescription of FixMediDisplay via ElexisEventDispatcher
+18.4.2013 - M. Descher - continuation of preliminary study
+	- merged CS [1615] fixed leak in MandantSelectionContributionItem
+	- merged CS [1347] fixed deselecting Konsultation in KonsDetailView
+	- moved perspectives to ch.elexis.core.ui

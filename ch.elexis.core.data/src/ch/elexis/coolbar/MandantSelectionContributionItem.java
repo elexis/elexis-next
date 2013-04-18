@@ -96,6 +96,16 @@ public class MandantSelectionContributionItem extends ContributionItem {
 	
 	@Override
 	public void fill(ToolBar parent, int index){
+		
+		// dispose old items first
+		disposeItems();
+		if (item != null) {
+			item.dispose();
+		}
+		if (menu != null) {
+			menu.dispose();
+		}
+
 		fParent = parent;
 		menu = new Menu(fParent);
 		rightToChange = Hub.acl.request(AccessControlDefaults.AC_CHANGEMANDANT);
@@ -157,6 +167,20 @@ public class MandantSelectionContributionItem extends ContributionItem {
 		}
 	};
 	
+	private void disposeItems(){
+		if (menuItems != null && menuItems.length > 0) {
+			for (int i = 0; i < menuItems.length; i++) {
+				if (menuItems[i] != null) {
+					Image img = menuItems[i].getImage();
+					if (img != null) {
+						img.dispose();
+					}
+					menuItems[i].dispose();
+				}
+			}
+		}
+	}
+
 	private Image getBoxSWTColorImage(Color color){
 		Display display = Display.getCurrent();
 		Image image = new Image(display, 16, 16);

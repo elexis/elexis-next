@@ -119,19 +119,17 @@ public class KonsDetailView extends ViewPart implements ElexisEventListener, IAc
 			Patient pat = (Patient) ev.getObject();
 			if (pat != null) {
 				if (!pat.equals(actPat)) {
+					setPatient(pat);
 					Konsultation b = pat.getLetzteKons(false);
-					// setKons(b);
-					Konsultation act =
-						(Konsultation) ElexisEventDispatcher.getSelected(Konsultation.class);
-					if (b == null && act != null) {
+					if (b == null) {
 						ElexisEventDispatcher.getInstance()
 							.fire(
 								new ElexisEvent(null, Konsultation.class,
 									ElexisEvent.EVENT_DESELECTED));
 					} else {
-						if ((act == null)
-							|| (!ElexisEventDispatcher.getSelected(Konsultation.class).getId()
-								.equals(b.getId()))) {
+						if (actKons == null) {
+							ElexisEventDispatcher.fireSelectionEvent(b);
+						} else if (!actKons.getId().equals(b.getId())) {
 							ElexisEventDispatcher.fireSelectionEvent(b);
 						}
 					}

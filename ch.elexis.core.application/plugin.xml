@@ -389,25 +389,25 @@
    <extension
          point="org.eclipse.ui.perspectives">
       <perspective
-            class="ch.elexis.ArtikelPerspektive"
+            class="ch.elexis.core.ui.perspectives.ArtikelPerspektive"
             icon="platform:/plugin/ch.elexis.core.icons/icons/pill.png"
             id="ch.elexis.ArtikelPerspektive"
             name="%elexis.articlePerspective">
       </perspective>
       <perspective
-            class="ch.elexis.PatientPerspektive"
+            class="ch.elexis.core.ui.perspectives.PatientPerspektive"
             icon="platform:/plugin/ch.elexis.core.icons/icons/group.png"
             id="ch.elexis.PatientPerspective"
             name="%elexis.patientPerspective">
       </perspective>
       <perspective
-            class="ch.elexis.AdressPerspektive"
+            class="ch.elexis.core.ui.perspectives.AdressPerspektive"
             icon="platform:/plugin/ch.elexis.core.icons/icons/address_book.png"
             id="ch.elexis.AdressPerspektive"
             name="%elexis.addressPerspective">
       </perspective>
       <perspective
-            class="ch.elexis.AbrechnungsPerspektive"
+            class="ch.elexis.core.ui.perspectives.AbrechnungsPerspektive"
             icon="platform:/plugin/ch.elexis.core.icons/icons/money.png"
             id="ch.elexis.AbrechnungPerspektive"
             name="%elexis.accountingPerspective">
@@ -416,25 +416,25 @@
          </description>
       </perspective>
       <perspective
-            class="ch.elexis.LeistungPerspektive"
+            class="ch.elexis.core.ui.perspectives.LeistungPerspektive"
             icon="platform:/plugin/ch.elexis.core.icons/icons/coins.png"
             id="ch.elexis.LeistungPerspektive"
             name="%elexis.activityPerspective">
       </perspective>
       <perspective
-            class="ch.elexis.ReminderPerspektive"
+            class="ch.elexis.core.ui.perspectives.ReminderPerspektive"
             icon="platform:/plugin/ch.elexis.core.icons/icons/bell.png"
             id="ch.elexis.ReminderPerspektive"
             name="%elexis.reminderPerspective">
       </perspective>
       <perspective
-            class="ch.elexis.BriefePerspektive"
+            class="ch.elexis.core.ui.perspectives.BriefePerspektive"
             icon="platform:/plugin/ch.elexis.core.icons/icons/documents_text.png"
             id="ch.elexis.BriefePerspektive"
             name="%elexis.letterPerspective">
       </perspective>
       <perspective
-            class="ch.elexis.BestellPerspektive"
+            class="ch.elexis.core.ui.perspectives.BestellPerspektive"
             icon="platform:/plugin/ch.elexis.core.icons/icons/cart.png"
             id="ch.elexis.bestellperspektive"
             name="%perspective.name.0">

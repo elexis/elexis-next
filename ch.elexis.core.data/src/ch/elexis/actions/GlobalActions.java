@@ -64,7 +64,6 @@ import org.slf4j.LoggerFactory;
 import ch.elexis.Desk;
 import ch.elexis.Hub;
 import ch.elexis.LoginDialog;
-import ch.elexis.PatientPerspektive;
 import ch.elexis.admin.ACE;
 import ch.elexis.core.icons.Images;
 import ch.elexis.data.Fall;
@@ -207,7 +206,8 @@ public class GlobalActions {
 					String perspektive =
 						Hub.localCfg.get(Hub.actUser + DEFAULTPERSPECTIVECFG, null);
 					if (StringTool.isNothing(perspektive)) {
-						perspektive = PatientPerspektive.ID;
+						// TODO refactor
+						perspektive = "ch.elexis.PatientPerspective";
 					}
 					try {
 						IWorkbenchWindow win = PlatformUI.getWorkbench().getActiveWorkbenchWindow();

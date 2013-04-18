@@ -9,7 +9,7 @@
  *    G. Weirich - initial implementation
  *    
  *******************************************************************************/
-package ch.elexis;
+package ch.elexis.core.ui.perspectives;
 
 import org.eclipse.swt.SWT;
 import org.eclipse.ui.IPageLayout;

@@ -29,6 +29,7 @@ import org.eclipse.ui.application.WorkbenchWindowAdvisor;
 import ch.elexis.Hub.ShutdownJob;
 import ch.elexis.actions.GlobalActions;
 import ch.elexis.core.PersistenceException;
+
 import ch.elexis.data.Anwender;
 import ch.elexis.data.PersistentObject;
 import ch.elexis.data.Reminder;
@@ -45,7 +46,8 @@ import ch.rgw.tools.ExHandler;
  */
 public class ApplicationWorkbenchAdvisor extends WorkbenchAdvisor {
 	
-	private static final String PERSPECTIVE_ID = PatientPerspektive.ID;
+	// TODO move to application plug-in
+	private static final String INITIAL_PERSPECTIVE_ID = "ch.elexis.PatientPerspective";
 	private Shell loginshell;
 	
 	@Override
@@ -149,7 +151,7 @@ public class ApplicationWorkbenchAdvisor extends WorkbenchAdvisor {
 	
 	@Override
 	public String getInitialWindowPerspectiveId(){
-		return PERSPECTIVE_ID;
+		return INITIAL_PERSPECTIVE_ID;
 	}
 	
 	@Override

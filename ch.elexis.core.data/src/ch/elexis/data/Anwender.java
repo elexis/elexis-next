@@ -11,7 +11,6 @@
 package ch.elexis.data;
 
 import java.util.HashMap;
-import java.util.Hashtable;
 import java.util.List;
 import java.util.Map;
 import java.util.SortedSet;
@@ -23,7 +22,6 @@ import org.eclipse.ui.PlatformUI;
 
 import ch.elexis.Desk;
 import ch.elexis.Hub;
-import ch.elexis.PatientPerspektive;
 import ch.elexis.StringConstants;
 import ch.elexis.actions.ElexisEvent;
 import ch.elexis.actions.ElexisEventDispatcher;
@@ -296,7 +294,8 @@ public class Anwender extends Person {
 			String perspektive =
 				Hub.localCfg.get(Hub.actUser + GlobalActions.DEFAULTPERSPECTIVECFG, null);
 			if (perspektive == null) {
-				perspektive = PatientPerspektive.ID;
+				// TODO refactor
+				perspektive = "ch.elexis.PatientPerspective";
 			}
 			try {
 				Desk.updateFont(PreferenceConstants.USR_DEFAULTFONT);

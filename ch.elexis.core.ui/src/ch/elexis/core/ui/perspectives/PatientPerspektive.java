@@ -10,7 +10,7 @@
  *    
  *******************************************************************************/
 
-package ch.elexis;
+package ch.elexis.core.ui.perspectives;
 
 import org.eclipse.ui.IFolderLayout;
 import org.eclipse.ui.IPageLayout;

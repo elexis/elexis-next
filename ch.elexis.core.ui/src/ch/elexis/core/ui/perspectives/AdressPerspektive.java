@@ -10,30 +10,31 @@
  *    
  *******************************************************************************/
 
-package ch.elexis;
+package ch.elexis.core.ui.perspectives;
 
-import org.eclipse.swt.SWT;
+import org.eclipse.ui.IFolderLayout;
 import org.eclipse.ui.IPageLayout;
 import org.eclipse.ui.IPerspectiveFactory;
 
-import ch.elexis.views.BBSView;
+import ch.elexis.views.KontaktDetailView;
+import ch.elexis.views.KontakteView;
 
 /**
- * Schwarzes Brett. Jeder angemeldete Anwender kann Themen eröffnen und/oder Anwprten zu schon
- * erschienenen Texten schreiben
- * 
- * @author gerry
- * 
+ * Diese Perspektive erzeugt das Startlayout für den Auswahlknopf "Adressen" Funktion: Verknüpfung
+ * vong Anschriften und Kontakten zu Adressen
  */
-public class BBSPerspective implements IPerspectiveFactory {
-	public static final String ID = "ch.elexis.SchwarzesBrett"; //$NON-NLS-1$
+public class AdressPerspektive implements IPerspectiveFactory {
+	public static final String ID = "ch.elexis.AdressPerspektive"; //$NON-NLS-1$
 	
 	public void createInitialLayout(IPageLayout layout){
 		String editorArea = layout.getEditorArea();
 		layout.setEditorAreaVisible(false);
-		layout.setFixed(true);
-		layout.addView(BBSView.ID, SWT.RIGHT, 0.9f, editorArea);
-		
+		layout.setFixed(false);
+		IFolderLayout oben = layout.createFolder("oben", IPageLayout.TOP, 0.5f, editorArea); //$NON-NLS-1$
+		IFolderLayout details =
+			layout.createFolder("details", IPageLayout.BOTTOM, 1.0f, editorArea); //$NON-NLS-1$
+		oben.addView(KontakteView.ID);
+		details.addView(KontaktDetailView.ID);
 	}
 	
 }
