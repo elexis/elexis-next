@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ch.elexis.Hub;
+import ch.elexis.core.ui.misc.SWTHelper;
 import ch.rgw.tools.VersionInfo;
 
 /**

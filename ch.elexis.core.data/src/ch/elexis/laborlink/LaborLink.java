@@ -44,6 +44,8 @@ import org.eclipse.swt.widgets.Shell;
 import ch.elexis.Desk;
 import ch.elexis.Hub;
 import ch.elexis.actions.ElexisEventDispatcher;
+import ch.elexis.core.ui.misc.SWTHelper;
+import ch.elexis.core.ui.views.LaborView;
 import ch.elexis.data.Anwender;
 import ch.elexis.data.LabGroup;
 import ch.elexis.data.LabItem;
@@ -53,9 +55,7 @@ import ch.elexis.data.Query;
 import ch.elexis.data.Reminder;
 import ch.elexis.text.IRichTextDisplay;
 import ch.elexis.util.IKonsExtension;
-import ch.elexis.util.SWTHelper;
 import ch.elexis.util.viewers.DefaultLabelProvider;
-import ch.elexis.views.LaborView;
 import ch.rgw.tools.TimeTool;
 
 public class LaborLink implements IKonsExtension {

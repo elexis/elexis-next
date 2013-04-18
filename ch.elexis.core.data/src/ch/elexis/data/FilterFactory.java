@@ -26,7 +26,7 @@ import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
 
-import ch.elexis.util.SWTHelper;
+import ch.elexis.core.ui.misc.SWTHelper;
 import ch.rgw.tools.StringTool;
 import ch.rgw.tools.Tree;
 

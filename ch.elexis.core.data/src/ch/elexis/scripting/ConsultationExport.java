@@ -20,6 +20,8 @@ import org.jdom.Element;
 import org.jdom.output.Format;
 import org.jdom.output.XMLOutputter;
 
+import ch.elexis.core.ui.controls.PatListFilterBox.IPatFilter;
+import ch.elexis.core.ui.filter.PatFilterImpl;
 import ch.elexis.data.Fall;
 import ch.elexis.data.Konsultation;
 import ch.elexis.data.Kontakt;
@@ -27,8 +29,6 @@ import ch.elexis.data.Patient;
 import ch.elexis.data.Query;
 import ch.elexis.data.Sticker;
 import ch.elexis.text.model.Samdas;
-import ch.elexis.views.PatFilterImpl;
-import ch.elexis.views.PatListFilterBox.IPatFilter;
 import ch.rgw.tools.IFilter;
 
 public class ConsultationExport {

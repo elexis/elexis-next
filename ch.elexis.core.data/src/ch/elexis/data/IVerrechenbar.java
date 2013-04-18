@@ -19,8 +19,7 @@ import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.jface.viewers.IFilter;
 
 import ch.elexis.Hub;
-import ch.elexis.dialogs.SelectFallNoObligationDialog;
-import ch.elexis.preferences.Leistungscodes;
+import ch.elexis.preferences.PreferenceConstants;
 import ch.elexis.util.IOptifier;
 import ch.rgw.tools.Money;
 import ch.rgw.tools.Result;
@@ -184,7 +183,7 @@ public interface IVerrechenbar extends ICodeElement {
 		public Result<IVerrechenbar> add(IVerrechenbar code, Konsultation kons){
 			String gesetz = kons.getFall().getRequiredString("Gesetz");
 			
-			boolean forceObligation = Hub.userCfg.get(Leistungscodes.OBLIGATION, false);
+			boolean forceObligation = Hub.userCfg.get(PreferenceConstants.LEISTUNGSCODES_OBLIGATION, false);
 			
 			if (forceObligation && gesetz.equalsIgnoreCase("KVG")) {
 				SelectFallNoObligationDialog dlg =

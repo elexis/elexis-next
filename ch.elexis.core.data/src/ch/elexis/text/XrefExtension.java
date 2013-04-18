@@ -19,9 +19,9 @@ import org.eclipse.ui.PartInitException;
 
 import ch.elexis.Desk;
 import ch.elexis.Hub;
+import ch.elexis.R;
 import ch.elexis.data.Brief;
 import ch.elexis.util.IKonsExtension;
-import ch.elexis.views.TextView;
 import ch.rgw.tools.ExHandler;
 
 public class XrefExtension implements IKonsExtension {
@@ -44,7 +44,7 @@ public class XrefExtension implements IKonsExtension {
 		try {
 			TextView tv =
 				(TextView) Hub.plugin.getWorkbench().getActiveWorkbenchWindow().getActivePage()
-					.showView(TextView.ID);
+					.showView(R.TextView_ID);
 			tv.openDocument(Brief.load(refID));
 			return true;
 		} catch (PartInitException e) {

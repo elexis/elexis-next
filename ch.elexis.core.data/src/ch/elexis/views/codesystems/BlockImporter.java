@@ -18,8 +18,8 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.swt.widgets.Composite;
 
+import ch.elexis.core.ui.misc.SWTHelper;
 import ch.elexis.util.ImporterPage;
-import ch.elexis.util.SWTHelper;
 import ch.rgw.tools.StringTool;
 
 public class BlockImporter extends ImporterPage {

@@ -20,6 +20,8 @@ import org.eclipse.swt.widgets.FileDialog;
 
 import ch.elexis.Desk;
 import ch.elexis.Hub;
+import ch.elexis.core.ui.controls.PatListFilterBox.IPatFilter;
+import ch.elexis.core.ui.filter.PatFilterImpl;
 import ch.elexis.data.Patient;
 import ch.elexis.data.Query;
 import ch.elexis.data.Sticker;
@@ -28,8 +30,6 @@ import ch.elexis.services.IDocumentManager;
 import ch.elexis.status.ElexisStatus;
 import ch.elexis.text.IOpaqueDocument;
 import ch.elexis.util.Extensions;
-import ch.elexis.views.PatFilterImpl;
-import ch.elexis.views.PatListFilterBox.IPatFilter;
 import ch.rgw.io.FileTool;
 
 public class DocumentExport {

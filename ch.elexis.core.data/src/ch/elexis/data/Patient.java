@@ -20,7 +20,7 @@ import ch.elexis.Hub;
 import ch.elexis.StringConstants;
 import ch.elexis.actions.ElexisEventDispatcher;
 import ch.elexis.admin.AccessControlDefaults;
-import ch.elexis.util.SWTHelper;
+import ch.elexis.core.ui.misc.SWTHelper;
 import ch.rgw.tools.ExHandler;
 import ch.rgw.tools.JdbcLink;
 import ch.rgw.tools.JdbcLink.Stm;

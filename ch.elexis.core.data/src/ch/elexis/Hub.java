@@ -50,7 +50,6 @@ import ch.elexis.preferences.PreferenceInitializer;
 import ch.elexis.util.FileUtility;
 import ch.elexis.util.Log;
 import ch.elexis.util.PlatformHelper;
-import ch.elexis.util.SWTHelper;
 import ch.rgw.io.LockFile;
 import ch.rgw.io.Settings;
 import ch.rgw.io.SqlSettings;

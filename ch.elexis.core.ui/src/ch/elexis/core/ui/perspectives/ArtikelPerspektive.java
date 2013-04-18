@@ -16,9 +16,9 @@ import org.eclipse.ui.IFolderLayout;
 import org.eclipse.ui.IPageLayout;
 import org.eclipse.ui.IPerspectiveFactory;
 
-import ch.elexis.views.KompendiumView;
-import ch.elexis.views.LagerView;
-import ch.elexis.views.artikel.ArtikelView;
+import ch.elexis.core.ui.views.ArtikelView;
+import ch.elexis.core.ui.views.KompendiumView;
+import ch.elexis.core.ui.views.LagerView;
 
 /**
  * Diese Klasse erzeugt das Anfangslayout für die Funktion "Artikel"

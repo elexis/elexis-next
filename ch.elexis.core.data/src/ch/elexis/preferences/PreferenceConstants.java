@@ -12,6 +12,7 @@
 
 package ch.elexis.preferences;
 
+
 /**
  * Konstanten für die Namen der verschiedenen Einstellungen
  */
@@ -121,4 +122,10 @@ public class PreferenceConstants {
 	public static final String SCANNER_PREFIX_CODE = "scanner/prefixcode"; //$NON-NLS-1$
 	public static final String SCANNER_POSTFIX_CODE = "scanner/postfixcode"; //$NON-NLS-1$
 	public static final String BARCODE_LENGTH = "scanner/barcodelength"; //$NON-NLS-1$
+	
+	// Leistungscodes
+	public final static String LEISTUNGSCODES_CFG_KEY = "billing/systems"; //$NON-NLS-1$
+	public final static String LEISTUNGSCODES_OBLIGATION = "billing/obligation"; //$NON-NLS-1$
+	public final static String LEISTUNGSCODES_BILLING_STRICT = "billing/strict"; //$NON-NLS-1$
+	public final static String LEISTUNGSCODES_OPTIFY = "billing/optify"; //$NON-NLS-1$
 }

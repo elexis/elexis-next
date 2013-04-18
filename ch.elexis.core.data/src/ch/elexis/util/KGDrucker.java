@@ -23,11 +23,12 @@ import org.eclipse.ui.progress.IProgressService;
 import org.eclipse.ui.statushandlers.StatusManager;
 
 import ch.elexis.Hub;
+import ch.elexis.R;
 import ch.elexis.actions.ElexisEventDispatcher;
+import ch.elexis.core.ui.views.KGPrintView;
 import ch.elexis.data.Patient;
 import ch.elexis.scripting.ScriptingException;
 import ch.elexis.status.ElexisStatus;
-import ch.elexis.views.KGPrintView;
 import ch.rgw.tools.ExHandler;
 
 @Deprecated
@@ -43,7 +44,7 @@ public class KGDrucker {
 		IProgressService progressService = PlatformUI.getWorkbench().getProgressService();
 		
 		try {
-			kgp = (KGPrintView) kgPage.showView(KGPrintView.ID);
+			kgp = (KGPrintView) kgPage.showView(R.KGPrintView_ID);
 			progressService.runInUI(PlatformUI.getWorkbench().getProgressService(),
 				new IRunnableWithProgress() {
 					public void run(IProgressMonitor monitor){

@@ -17,10 +17,10 @@ import org.eclipse.swt.browser.Browser;
 import org.eclipse.swt.program.Program;
 
 import ch.elexis.Desk;
-import ch.elexis.dialogs.BrowserInputDialog;
-import ch.elexis.dialogs.ChoiceDialog;
+import ch.elexis.core.ui.dialogs.BrowserInputDialog;
+import ch.elexis.core.ui.dialogs.ChoiceDialog;
+import ch.elexis.core.ui.misc.SWTHelper;
 import ch.elexis.util.Log;
-import ch.elexis.util.SWTHelper;
 import ch.rgw.tools.TimeTool;
 
 public class Util {

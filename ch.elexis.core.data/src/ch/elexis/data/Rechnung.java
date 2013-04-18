@@ -22,15 +22,14 @@ import org.eclipse.jface.dialogs.MessageDialog;
 
 import ch.elexis.Desk;
 import ch.elexis.Hub;
-import ch.elexis.preferences.Leistungscodes;
 import ch.elexis.preferences.PreferenceConstants;
 import ch.elexis.util.Log;
 import ch.rgw.tools.JdbcLink;
+import ch.rgw.tools.JdbcLink.Stm;
 import ch.rgw.tools.Money;
 import ch.rgw.tools.Result;
 import ch.rgw.tools.StringTool;
 import ch.rgw.tools.TimeTool;
-import ch.rgw.tools.JdbcLink.Stm;
 
 public class Rechnung extends PersistentObject {
 	public static final String REMARK = "Bemerkung";
@@ -172,7 +171,7 @@ public class Rechnung extends PersistentObject {
 					+ getRnDesc(ret) + ")", ret, true);
 			// garant=Hub.actMandant;
 		} else {
-			if (Hub.userCfg.get(Leistungscodes.BILLING_STRICT, true) && !f.isValid()) {
+			if (Hub.userCfg.get(PreferenceConstants.LEISTUNGSCODES_BILLING_STRICT, true) && !f.isValid()) {
 				result =
 					result.add(Result.SEVERITY.ERROR, 8, "Die Rechnung hat keinen gültigen Fall ("
 						+ getRnDesc(ret) + ")", ret, true);
@@ -182,7 +181,7 @@ public class Rechnung extends PersistentObject {
 		}
 		
 		// check if there are any Konsultationen
-		if (Hub.userCfg.get(Leistungscodes.BILLING_STRICT, true)) {
+		if (Hub.userCfg.get(PreferenceConstants.LEISTUNGSCODES_BILLING_STRICT, true)) {
 			if ((diagnosen == null) || (diagnosen.size() == 0)) {
 				result =
 					result.add(Result.SEVERITY.ERROR, 6, "Die Rechnung enthält keine Diagnose ("

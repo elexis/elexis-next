@@ -29,12 +29,12 @@ import org.eclipse.ui.handlers.HandlerUtil;
 import org.eclipse.ui.handlers.IHandlerService;
 
 import ch.elexis.Hub;
+import ch.elexis.core.ui.misc.SWTHelper;
 import ch.elexis.data.Fall;
 import ch.elexis.data.Konsultation;
 import ch.elexis.data.Rechnung;
-import ch.elexis.preferences.Leistungscodes;
+import ch.elexis.preferences.PreferenceConstants;
 import ch.elexis.util.ResultAdapter;
-import ch.elexis.util.SWTHelper;
 import ch.elexis.views.rechnung.Messages;
 import ch.rgw.tools.Result;
 import ch.rgw.tools.Tree;
@@ -65,7 +65,7 @@ public class ErstelleRnnCommand extends AbstractHandler {
 			int rejected = 0;
 			for (Tree tFall = tPat.getFirstChild(); tFall != null; tFall = tFall.getNextSibling()) {
 				Fall fall = (Fall) tFall.contents;
-				if (Hub.userCfg.get(Leistungscodes.BILLING_STRICT, true)) {
+				if (Hub.userCfg.get(PreferenceConstants.LEISTUNGSCODES_BILLING_STRICT, true)) {
 					if (!fall.isValid()) {
 						rejected++;
 						continue;

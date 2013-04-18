@@ -14,8 +14,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
-import ch.elexis.views.RezeptBlatt;
-
 /**
  * <b>Poor mans dependency injection.</b> This file allows for the injection of an external
  * configuration. There are certain parts in code which are "hard-wired" for the application of
@@ -43,7 +41,7 @@ public class ElexisConfigurationConstants {
 	/**
 	 * Rezeptausgabe Selektion
 	 */
-	public static String rezeptausgabe = RezeptBlatt.ID;
+	public static String rezeptausgabe = R.RezeptBlatt_ID;
 	
 	public static boolean init(){
 		InputStream istream =

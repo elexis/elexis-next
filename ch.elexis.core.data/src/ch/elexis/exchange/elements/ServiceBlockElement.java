@@ -20,6 +20,7 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IConfigurationElement;
 
 import ch.elexis.Hub;
+import ch.elexis.core.ui.misc.SWTHelper;
 import ch.elexis.data.Eigenleistung;
 import ch.elexis.data.ICodeElement;
 import ch.elexis.data.IVerrechenbar;
@@ -28,7 +29,6 @@ import ch.elexis.data.PersistentObject;
 import ch.elexis.data.PersistentObjectFactory;
 import ch.elexis.exchange.XChangeExporter;
 import ch.elexis.util.Extensions;
-import ch.elexis.util.SWTHelper;
 import ch.elexis.views.codesystems.CodeSelectorFactory;
 import ch.rgw.tools.ExHandler;
 import ch.rgw.tools.StringTool;

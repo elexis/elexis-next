@@ -1,7 +1,0 @@
-Manifest-Version: 1.0
-Bundle-ManifestVersion: 2
-Bundle-Name: Elexis Core Model
-Bundle-SymbolicName: ch.elexis.core.model
-Bundle-Version: 2.3.0.dev-qualifier
-Bundle-Vendor: elexis.info
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7

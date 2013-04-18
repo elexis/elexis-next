@@ -23,14 +23,13 @@ import org.eclipse.jface.viewers.IFilter;
 
 import ch.elexis.Desk;
 import ch.elexis.actions.ElexisEventDispatcher;
-import ch.elexis.dialogs.AddElementToBlockDialog;
-import ch.elexis.preferences.inputs.MultiplikatorEditor;
-import ch.elexis.preferences.inputs.MultiplikatorEditor.MultiplikatorList;
+import ch.elexis.core.ui.controls.MultiplikatorEditor;
+import ch.elexis.core.ui.controls.MultiplikatorEditor.MultiplikatorList;
 import ch.elexis.util.IOptifier;
 import ch.rgw.tools.JdbcLink;
+import ch.rgw.tools.JdbcLink.Stm;
 import ch.rgw.tools.Money;
 import ch.rgw.tools.TimeTool;
-import ch.rgw.tools.JdbcLink.Stm;
 
 public abstract class VerrechenbarAdapter extends PersistentObject implements IVerrechenbar {
 	

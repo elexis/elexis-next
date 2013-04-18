@@ -22,12 +22,11 @@ import org.eclipse.jface.dialogs.MessageDialog;
 import ch.elexis.Hub;
 import ch.elexis.StringConstants;
 import ch.elexis.admin.AccessControlDefaults;
-import ch.elexis.preferences.Leistungscodes;
+import ch.elexis.core.ui.misc.SWTHelper;
 import ch.elexis.preferences.PreferenceConstants;
 import ch.elexis.util.Extensions;
 import ch.elexis.util.IRnOutputter;
 import ch.elexis.util.Log;
-import ch.elexis.util.SWTHelper;
 import ch.rgw.tools.ExHandler;
 import ch.rgw.tools.StringTool;
 import ch.rgw.tools.TimeTool;
@@ -680,72 +679,72 @@ public class Fall extends PersistentObject {
 	 * @return an Array with the names of all configured billing systems
 	 */
 	public static String[] getAbrechnungsSysteme(){
-		String[] ret = Hub.globalCfg.nodes(Leistungscodes.CFG_KEY);
+		String[] ret = Hub.globalCfg.nodes(PreferenceConstants.LEISTUNGSCODES_CFG_KEY);
 		if ((ret == null) || (ret.length == 0)) {
 			List<IConfigurationElement> list =
 				Extensions.getExtensions("ch.elexis.RechnungsManager"); //$NON-NLS-1$
 			for (IConfigurationElement ic : list) {
 				if (ic.getAttribute("name").startsWith("Tarmed")) { //$NON-NLS-1$ //$NON-NLS-2$
-					Hub.globalCfg.set(Leistungscodes.CFG_KEY + "/KVG/name", //$NON-NLS-1$
+					Hub.globalCfg.set(PreferenceConstants.LEISTUNGSCODES_CFG_KEY + "/KVG/name", //$NON-NLS-1$
 						KVG_NAME);
-					Hub.globalCfg.set(Leistungscodes.CFG_KEY + "/KVG/gesetz", //$NON-NLS-1$
+					Hub.globalCfg.set(PreferenceConstants.LEISTUNGSCODES_CFG_KEY + "/KVG/gesetz", //$NON-NLS-1$
 						"KVG"); //$NON-NLS-1$
 					Hub.globalCfg.set(
-						Leistungscodes.CFG_KEY + "/KVG/leistungscodes", CONST_TARMED_LEISTUNG); //$NON-NLS-1$
+						PreferenceConstants.LEISTUNGSCODES_CFG_KEY + "/KVG/leistungscodes", CONST_TARMED_LEISTUNG); //$NON-NLS-1$
 					Hub.globalCfg.set(
-						Leistungscodes.CFG_KEY + "/KVG/standardausgabe", CONST_TARMED_DRUCKER); //$NON-NLS-1$
-					Hub.globalCfg.set(Leistungscodes.CFG_KEY + "/KVG/bedingungen", //$NON-NLS-1$
+						PreferenceConstants.LEISTUNGSCODES_CFG_KEY + "/KVG/standardausgabe", CONST_TARMED_DRUCKER); //$NON-NLS-1$
+					Hub.globalCfg.set(PreferenceConstants.LEISTUNGSCODES_CFG_KEY + "/KVG/bedingungen", //$NON-NLS-1$
 						KVG_REQUIREMENTS);
 					
-					Hub.globalCfg.set(Leistungscodes.CFG_KEY + "/UVG/name", //$NON-NLS-1$
+					Hub.globalCfg.set(PreferenceConstants.LEISTUNGSCODES_CFG_KEY + "/UVG/name", //$NON-NLS-1$
 						UVG_NAME);
 					Hub.globalCfg.set(
-						Leistungscodes.CFG_KEY + "/UVG/leistungscodes", CONST_TARMED_LEISTUNG); //$NON-NLS-1$
+						PreferenceConstants.LEISTUNGSCODES_CFG_KEY + "/UVG/leistungscodes", CONST_TARMED_LEISTUNG); //$NON-NLS-1$
 					Hub.globalCfg.set(
-						Leistungscodes.CFG_KEY + "/UVG/standardausgabe", CONST_TARMED_DRUCKER); //$NON-NLS-1$
-					Hub.globalCfg.set(Leistungscodes.CFG_KEY + "/UVG/bedingungen", //$NON-NLS-1$
+						PreferenceConstants.LEISTUNGSCODES_CFG_KEY + "/UVG/standardausgabe", CONST_TARMED_DRUCKER); //$NON-NLS-1$
+					Hub.globalCfg.set(PreferenceConstants.LEISTUNGSCODES_CFG_KEY + "/UVG/bedingungen", //$NON-NLS-1$
 						UVG_REQUIREMENTS);
-					Hub.globalCfg.set(Leistungscodes.CFG_KEY + "/UVG/gesetz", //$NON-NLS-1$
+					Hub.globalCfg.set(PreferenceConstants.LEISTUNGSCODES_CFG_KEY + "/UVG/gesetz", //$NON-NLS-1$
 						"UVG"); //$NON-NLS-1$
 					
-					Hub.globalCfg.set(Leistungscodes.CFG_KEY + "/IV/name", IV_NAME); //$NON-NLS-1$
+					Hub.globalCfg.set(PreferenceConstants.LEISTUNGSCODES_CFG_KEY + "/IV/name", IV_NAME); //$NON-NLS-1$
 					Hub.globalCfg.set(
-						Leistungscodes.CFG_KEY + "/IV/leistungscodes", CONST_TARMED_LEISTUNG); //$NON-NLS-1$
+						PreferenceConstants.LEISTUNGSCODES_CFG_KEY + "/IV/leistungscodes", CONST_TARMED_LEISTUNG); //$NON-NLS-1$
 					Hub.globalCfg.set(
-						Leistungscodes.CFG_KEY + "/IV/standardausgabe", CONST_TARMED_DRUCKER); //$NON-NLS-1$
-					Hub.globalCfg.set(Leistungscodes.CFG_KEY + "/IV/bedingungen", //$NON-NLS-1$
+						PreferenceConstants.LEISTUNGSCODES_CFG_KEY + "/IV/standardausgabe", CONST_TARMED_DRUCKER); //$NON-NLS-1$
+					Hub.globalCfg.set(PreferenceConstants.LEISTUNGSCODES_CFG_KEY + "/IV/bedingungen", //$NON-NLS-1$
 						"Kostenträger:K;Fallnummer:T"); //$NON-NLS-1$
-					Hub.globalCfg.set(Leistungscodes.CFG_KEY + "/IV/gesetz", //$NON-NLS-1$
+					Hub.globalCfg.set(PreferenceConstants.LEISTUNGSCODES_CFG_KEY + "/IV/gesetz", //$NON-NLS-1$
 						"IVG"); //$NON-NLS-1$
 					
-					Hub.globalCfg.set(Leistungscodes.CFG_KEY + "/MV/name", MV_NAME); //$NON-NLS-1$
+					Hub.globalCfg.set(PreferenceConstants.LEISTUNGSCODES_CFG_KEY + "/MV/name", MV_NAME); //$NON-NLS-1$
 					Hub.globalCfg.set(
-						Leistungscodes.CFG_KEY + "/MV/leistungscodes", CONST_TARMED_LEISTUNG); //$NON-NLS-1$
+						PreferenceConstants.LEISTUNGSCODES_CFG_KEY + "/MV/leistungscodes", CONST_TARMED_LEISTUNG); //$NON-NLS-1$
 					Hub.globalCfg.set(
-						Leistungscodes.CFG_KEY + "/MV/standardausgabe", CONST_TARMED_DRUCKER); //$NON-NLS-1$
-					Hub.globalCfg.set(Leistungscodes.CFG_KEY + "/MV/bedingungen", "Kostenträger:K"); //$NON-NLS-1$ //$NON-NLS-2$
-					Hub.globalCfg.set(Leistungscodes.CFG_KEY + "/MV/gesetz", //$NON-NLS-1$
+						PreferenceConstants.LEISTUNGSCODES_CFG_KEY + "/MV/standardausgabe", CONST_TARMED_DRUCKER); //$NON-NLS-1$
+					Hub.globalCfg.set(PreferenceConstants.LEISTUNGSCODES_CFG_KEY + "/MV/bedingungen", "Kostenträger:K"); //$NON-NLS-1$ //$NON-NLS-2$
+					Hub.globalCfg.set(PreferenceConstants.LEISTUNGSCODES_CFG_KEY + "/MV/gesetz", //$NON-NLS-1$
 						"MVG"); //$NON-NLS-1$
 					
-					Hub.globalCfg.set(Leistungscodes.CFG_KEY + "/privat/name", //$NON-NLS-1$
+					Hub.globalCfg.set(PreferenceConstants.LEISTUNGSCODES_CFG_KEY + "/privat/name", //$NON-NLS-1$
 						PRIVATE_NAME);
 					Hub.globalCfg.set(
-						Leistungscodes.CFG_KEY + "/privat/leistungscodes", CONST_TARMED_LEISTUNG); //$NON-NLS-1$
+						PreferenceConstants.LEISTUNGSCODES_CFG_KEY + "/privat/leistungscodes", CONST_TARMED_LEISTUNG); //$NON-NLS-1$
 					Hub.globalCfg.set(
-						Leistungscodes.CFG_KEY + "/privat/standardausgabe", CONST_TARMED_DRUCKER); //$NON-NLS-1$
-					Hub.globalCfg.set(Leistungscodes.CFG_KEY + "/privat/gesetz", "VVG"); //$NON-NLS-1$ //$NON-NLS-2$
-					// Hub.globalCfg.set(Leistungscodes.CFG_KEY+"/privat/bedingungen",
+						PreferenceConstants.LEISTUNGSCODES_CFG_KEY + "/privat/standardausgabe", CONST_TARMED_DRUCKER); //$NON-NLS-1$
+					Hub.globalCfg.set(PreferenceConstants.LEISTUNGSCODES_CFG_KEY + "/privat/gesetz", "VVG"); //$NON-NLS-1$ //$NON-NLS-2$
+					// Hub.globalCfg.set(PreferenceConstants.LEISTUNGSCODES_CFG_KEY+"/privat/bedingungen",
 					// "Rechnungsempfänger:K");
 					
-					Hub.globalCfg.set(Leistungscodes.CFG_KEY + "/VVG/name", //$NON-NLS-1$
+					Hub.globalCfg.set(PreferenceConstants.LEISTUNGSCODES_CFG_KEY + "/VVG/name", //$NON-NLS-1$
 						VVG_NAME);
 					Hub.globalCfg.set(
-						Leistungscodes.CFG_KEY + "/VVG/leistungscodes", CONST_TARMED_LEISTUNG); //$NON-NLS-1$
+						PreferenceConstants.LEISTUNGSCODES_CFG_KEY + "/VVG/leistungscodes", CONST_TARMED_LEISTUNG); //$NON-NLS-1$
 					Hub.globalCfg.set(
-						Leistungscodes.CFG_KEY + "/VVG/standardausgabe", CONST_TARMED_DRUCKER); //$NON-NLS-1$
-					Hub.globalCfg.set(Leistungscodes.CFG_KEY + "/VVG/bedingungen", //$NON-NLS-1$
+						PreferenceConstants.LEISTUNGSCODES_CFG_KEY + "/VVG/standardausgabe", CONST_TARMED_DRUCKER); //$NON-NLS-1$
+					Hub.globalCfg.set(PreferenceConstants.LEISTUNGSCODES_CFG_KEY + "/VVG/bedingungen", //$NON-NLS-1$
 						KVG_REQUIREMENTS);
-					Hub.globalCfg.set(Leistungscodes.CFG_KEY + "/VVG/gesetz", //$NON-NLS-1$
+					Hub.globalCfg.set(PreferenceConstants.LEISTUNGSCODES_CFG_KEY + "/VVG/gesetz", //$NON-NLS-1$
 						"VVG"); //$NON-NLS-1$
 					
 					PersistentObject
@@ -768,7 +767,7 @@ public class Fall extends PersistentObject {
 					break;
 				}
 			}
-			ret = Hub.globalCfg.nodes(Leistungscodes.CFG_KEY);
+			ret = Hub.globalCfg.nodes(PreferenceConstants.LEISTUNGSCODES_CFG_KEY);
 			if (ret == null) {
 				return new String[] {
 					Messages.getString("Fall.Undefined")}; //$NON-NLS-1$
@@ -779,7 +778,7 @@ public class Fall extends PersistentObject {
 	
 	public static void createAbrechnungssystem(final String systemname, final String codesystem,
 		final String ausgabe, final String... requirements){
-		String key = Leistungscodes.CFG_KEY + "/" + systemname; //$NON-NLS-1$
+		String key = PreferenceConstants.LEISTUNGSCODES_CFG_KEY + "/" + systemname; //$NON-NLS-1$
 		Hub.globalCfg.set(key + "/name", systemname); //$NON-NLS-1$
 		Hub.globalCfg.set(key + "/leistungscodes", codesystem); //$NON-NLS-1$
 		Hub.globalCfg.set(key + "/standardausgabe", ausgabe); //$NON-NLS-1$
@@ -788,34 +787,34 @@ public class Fall extends PersistentObject {
 	}
 	
 	public static void removeAbrechnungssystem(final String systemName){
-		Hub.globalCfg.remove(Leistungscodes.CFG_KEY + "/" + systemName); //$NON-NLS-1$
+		Hub.globalCfg.remove(PreferenceConstants.LEISTUNGSCODES_CFG_KEY + "/" + systemName); //$NON-NLS-1$
 		Hub.globalCfg.flush();
 	}
 	
 	public static String getCodeSystem(final String billingSystem){
-		String ret = Hub.globalCfg.get(Leistungscodes.CFG_KEY + "/" //$NON-NLS-1$
+		String ret = Hub.globalCfg.get(PreferenceConstants.LEISTUNGSCODES_CFG_KEY + "/" //$NON-NLS-1$
 			+ billingSystem + "/leistungscodes", null); //$NON-NLS-1$
 		if (ret == null) { // compatibility
 			getAbrechnungsSysteme();
-			ret = Hub.globalCfg.get(Leistungscodes.CFG_KEY + "/" //$NON-NLS-1$
+			ret = Hub.globalCfg.get(PreferenceConstants.LEISTUNGSCODES_CFG_KEY + "/" //$NON-NLS-1$
 				+ billingSystem + "/leistungscodes", "?"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 		return ret;
 	}
 	
 	public static String getDefaultPrintSystem(final String billingSystem){
-		String ret = Hub.globalCfg.get(Leistungscodes.CFG_KEY + "/" //$NON-NLS-1$
+		String ret = Hub.globalCfg.get(PreferenceConstants.LEISTUNGSCODES_CFG_KEY + "/" //$NON-NLS-1$
 			+ billingSystem + "/standardausgabe", null); //$NON-NLS-1$
 		if (ret == null) { // compatibility
 			getAbrechnungsSysteme();
-			ret = Hub.globalCfg.get(Leistungscodes.CFG_KEY + "/" //$NON-NLS-1$
+			ret = Hub.globalCfg.get(PreferenceConstants.LEISTUNGSCODES_CFG_KEY + "/" //$NON-NLS-1$
 				+ billingSystem + "/standardausgabe", "?"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 		return ret;
 	}
 	
 	public static String[] getBillingSystemConstants(final String billingSystem){
-		String bc = Hub.globalCfg.get(Leistungscodes.CFG_KEY + "/" //$NON-NLS-1$
+		String bc = Hub.globalCfg.get(PreferenceConstants.LEISTUNGSCODES_CFG_KEY + "/" //$NON-NLS-1$
 			+ billingSystem + "/constants", null); //$NON-NLS-1$
 		if (bc == null) {
 			return new String[0];
@@ -846,26 +845,26 @@ public class Fall extends PersistentObject {
 	 */
 	public static void addBillingSystemConstant(final String billingSystem, final String constant){
 		if (constant.indexOf('=') != -1) {
-			String bc = Hub.globalCfg.get(Leistungscodes.CFG_KEY + "/" //$NON-NLS-1$
+			String bc = Hub.globalCfg.get(PreferenceConstants.LEISTUNGSCODES_CFG_KEY + "/" //$NON-NLS-1$
 				+ billingSystem + "/constants", null); //$NON-NLS-1$
 			if (bc != null) {
 				bc += "#" + constant; //$NON-NLS-1$
 			} else {
 				bc = constant;
 			}
-			Hub.globalCfg.set(Leistungscodes.CFG_KEY + "/" + billingSystem //$NON-NLS-1$
+			Hub.globalCfg.set(PreferenceConstants.LEISTUNGSCODES_CFG_KEY + "/" + billingSystem //$NON-NLS-1$
 				+ "/constants", bc); //$NON-NLS-1$
 		}
 	}
 	
 	public static void removeBillingSystemConstant(final String billingSystem, final String constant){
-		String bc = Hub.globalCfg.get(Leistungscodes.CFG_KEY + "/" //$NON-NLS-1$
+		String bc = Hub.globalCfg.get(PreferenceConstants.LEISTUNGSCODES_CFG_KEY + "/" //$NON-NLS-1$
 			+ billingSystem + "/constants", null); //$NON-NLS-1$
 		bc = bc.replaceAll(constant, ""); //$NON-NLS-1$
 		bc = bc.replaceAll("##", "#"); //$NON-NLS-1$ //$NON-NLS-2$
 		bc = bc.replaceFirst("#$", ""); //$NON-NLS-1$ //$NON-NLS-2$
 		bc = bc.replaceFirst("^#", ""); //$NON-NLS-1$ //$NON-NLS-2$
-		Hub.globalCfg.set(Leistungscodes.CFG_KEY + "/" + billingSystem //$NON-NLS-1$
+		Hub.globalCfg.set(PreferenceConstants.LEISTUNGSCODES_CFG_KEY + "/" + billingSystem //$NON-NLS-1$
 			+ "/constants", bc); //$NON-NLS-1$
 	}
 	
@@ -878,7 +877,7 @@ public class Fall extends PersistentObject {
 	 */
 	@Deprecated
 	public static String getBillingSystemAttribute(final String billingSystem, final String attr){
-		String ret = Hub.globalCfg.get(Leistungscodes.CFG_KEY + "/" //$NON-NLS-1$
+		String ret = Hub.globalCfg.get(PreferenceConstants.LEISTUNGSCODES_CFG_KEY + "/" //$NON-NLS-1$
 			+ billingSystem + "/" + attr, ""); //$NON-NLS-1$ //$NON-NLS-2$
 		return ret;
 	}
@@ -894,7 +893,7 @@ public class Fall extends PersistentObject {
 	 *         numeric RS Radios, saved as string RN Radios, saved as numeric, selected index
 	 */
 	public static String getRequirements(final String billingSystem){
-		String ret = Hub.globalCfg.get(Leistungscodes.CFG_KEY + "/" //$NON-NLS-1$
+		String ret = Hub.globalCfg.get(PreferenceConstants.LEISTUNGSCODES_CFG_KEY + "/" //$NON-NLS-1$
 			+ billingSystem + "/bedingungen", null); //$NON-NLS-1$
 		return ret;
 	}
@@ -910,7 +909,7 @@ public class Fall extends PersistentObject {
 	 *         numeric RS Radios, saved as string RN Radios, saved as numeric, selected index
 	 */
 	public static String getOptionals(final String billingSystem){
-		String ret = Hub.globalCfg.get(Leistungscodes.CFG_KEY + "/" //$NON-NLS-1$
+		String ret = Hub.globalCfg.get(PreferenceConstants.LEISTUNGSCODES_CFG_KEY + "/" //$NON-NLS-1$
 			+ billingSystem + "/fakultativ", null); //$NON-NLS-1$
 		return ret;
 	}
@@ -927,7 +926,7 @@ public class Fall extends PersistentObject {
 	 *         numeric RS Radios, saved as string RN Radios, saved as numeric, selected index
 	 */
 	public static String getUnused(final String billingSystem){
-		String ret = Hub.globalCfg.get(Leistungscodes.CFG_KEY + "/" //$NON-NLS-1$
+		String ret = Hub.globalCfg.get(PreferenceConstants.LEISTUNGSCODES_CFG_KEY + "/" //$NON-NLS-1$
 			+ billingSystem + "/unused", null); //$NON-NLS-1$
 		return ret;
 	}

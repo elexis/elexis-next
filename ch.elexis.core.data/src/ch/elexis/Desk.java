@@ -34,7 +34,6 @@ import org.eclipse.swt.graphics.RGB;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.PlatformUI;
-import org.eclipse.ui.forms.widgets.FormToolkit;
 
 import ch.elexis.preferences.PreferenceConstants;
 import ch.elexis.preferences.PreferenceInitializer;
@@ -44,7 +43,7 @@ import ch.rgw.tools.ExHandler;
 import ch.rgw.tools.StringTool;
 
 public class Desk implements IApplication {
-	private static FormToolkit theToolkit = null;
+	
 	
 	private static Display theDisplay = null;
 	private static ImageRegistry theImageRegistry = null;
@@ -99,9 +98,6 @@ public class Desk implements IApplication {
 			ex.printStackTrace();
 			return -1;
 		} finally { // aufräumen
-			if (theToolkit != null) {
-				theToolkit.dispose();
-			}
 			if (theImageRegistry != null) {
 				theImageRegistry.dispose();
 			}
@@ -217,13 +213,6 @@ public class Desk implements IApplication {
 			theColorRegistry = new ColorRegistry(getDisplay(), true);
 		}
 		return theColorRegistry;
-	}
-	
-	public static FormToolkit getToolkit(){
-		if (theToolkit == null) {
-			theToolkit = new FormToolkit(getDisplay());
-		}
-		return theToolkit;
 	}
 	
 	public static Display getDisplay(){

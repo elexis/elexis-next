@@ -17,9 +17,9 @@ import org.eclipse.ui.IFolderLayout;
 import org.eclipse.ui.IPageLayout;
 import org.eclipse.ui.IPerspectiveFactory;
 
-import ch.elexis.views.BestellView;
-import ch.elexis.views.artikel.ArtikelSelektor;
-import ch.elexis.views.artikel.ArtikelView;
+import ch.elexis.core.ui.views.ArtikelSelektor;
+import ch.elexis.core.ui.views.ArtikelView;
+import ch.elexis.core.ui.views.BestellView;
 
 public class BestellPerspektive implements IPerspectiveFactory {
 	public static final String ID = "ch.elexis.bestellperspektive"; //$NON-NLS-1$

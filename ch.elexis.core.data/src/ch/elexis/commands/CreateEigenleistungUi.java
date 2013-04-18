@@ -18,8 +18,8 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.handlers.HandlerUtil;
 
 import ch.elexis.actions.ElexisEventDispatcher;
+import ch.elexis.core.ui.dialogs.EigenLeistungDialog;
 import ch.elexis.data.Leistungsblock;
-import ch.elexis.dialogs.EigenLeistungDialog;
 
 public class CreateEigenleistungUi extends AbstractHandler {
 	public static final String COMMANDID = "ch.elexis.eigenleistung.create"; //$NON-NLS-1$

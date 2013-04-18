@@ -10,12 +10,10 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.expressions,
  org.eclipse.core.databinding,
  org.eclipse.core.databinding.beans,
- org.eclipse.jface.databinding,
- org.eclipse.ui,
- org.eclipse.ui.forms,
  ch.rgw.utility;bundle-version="2.3.0",
  ch.elexis.core;bundle-version="2.3.0",
- ch.elexis.core.icons;bundle-version="2.3.0"
+ ch.elexis.core.icons;bundle-version="2.3.0",
+ org.eclipse.ui;bundle-version="3.8.2"
 Eclipse-LazyStart: true
 Export-Package: .,
  ch.elexis;
@@ -77,22 +75,6 @@ Export-Package: .,
    ch.elexis.exchange,
    org.eclipse.jface.dialogs",
  ch.elexis.data.cache;uses:="ch.elexis.util",
- ch.elexis.dialogs;
-  uses:="ch.elexis.actions,
-   ch.rgw.tools,
-   ch.elexis.util,
-   ch.elexis.data,
-   org.eclipse.swt.events,
-   org.eclipse.swt.custom,
-   com.tiff.common.ui.datepicker,
-   org.eclipse.ui.forms.widgets,
-   ch.elexis.text,
-   ch.elexis.util.viewers,
-   org.eclipse.jface.viewers,
-   org.eclipse.swt.graphics,
-   org.eclipse.ui.dialogs,
-   org.eclipse.swt.widgets,
-   org.eclipse.jface.dialogs",
  ch.elexis.exchange;
   uses:="org.eclipse.osgi.util,
    org.eclipse.core.runtime,
@@ -125,21 +107,11 @@ Export-Package: .,
    org.eclipse.jface.util,
    org.eclipse.swt.widgets,
    org.eclipse.jface.dialogs",
- ch.elexis.preferences.inputs;
-  uses:="ch.rgw.tools,
-   org.eclipse.jface.preference,
-   ch.elexis.data,
-   org.eclipse.jface.viewers,
-   org.eclipse.swt.widgets,
-   ch.rgw.io,
-   org.eclipse.jface.dialogs,
-   com.tiff.common.ui.datepicker",
  ch.elexis.scripting;
   uses:="org.eclipse.osgi.util,
    org.eclipse.swt.widgets,
    org.eclipse.jface.dialogs,
    com.tiff.common.ui.datepicker",
- ch.elexis.selectors;uses:="org.eclipse.osgi.util,ch.elexis.data,org.eclipse.swt.widgets",
  ch.elexis.services;uses:="ch.rgw.tools,ch.elexis.data,ch.elexis.text",
  ch.elexis.status,
  ch.elexis.text;
@@ -268,6 +240,6 @@ Export-Package: .,
    org.eclipse.jface.viewers,
    org.eclipse.swt.widgets,
    org.eclipse.jface.dialogs",
- com.tiff.common.ui.datepicker;uses:="org.eclipse.swt.events,org.eclipse.swt.graphics,org.eclipse.swt.widgets"
+ ch.elexis.views.textsystem
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Import-Package: org.slf4j

@@ -18,6 +18,7 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.MultiStatus;
 import org.eclipse.core.runtime.Status;
 
+import ch.elexis.core.ui.misc.SWTHelper;
 import ch.rgw.tools.Result;
 
 /**

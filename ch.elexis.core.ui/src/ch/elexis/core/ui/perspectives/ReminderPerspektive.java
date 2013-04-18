@@ -16,7 +16,7 @@ import org.eclipse.swt.SWT;
 import org.eclipse.ui.IPageLayout;
 import org.eclipse.ui.IPerspectiveFactory;
 
-import ch.elexis.views.ReminderView;
+import ch.elexis.core.ui.views.ReminderView;
 
 public class ReminderPerspektive implements IPerspectiveFactory {
 	public static final String ID = "ch.elexis.ReminderPerspektive"; //$NON-NLS-1$

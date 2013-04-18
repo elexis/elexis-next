@@ -43,12 +43,12 @@ import ch.elexis.actions.ICodeSelectorTarget;
 import ch.elexis.actions.TreeDataLoader;
 import ch.elexis.commands.ExportiereBloeckeCommand;
 import ch.elexis.core.icons.Images;
+import ch.elexis.core.ui.controls.FieldDescriptor;
+import ch.elexis.core.ui.misc.SWTHelper;
 import ch.elexis.data.ICodeElement;
 import ch.elexis.data.Leistungsblock;
 import ch.elexis.data.PersistentObject;
 import ch.elexis.data.Query;
-import ch.elexis.selectors.FieldDescriptor;
-import ch.elexis.util.SWTHelper;
 import ch.elexis.util.viewers.CommonViewer;
 import ch.elexis.util.viewers.DefaultLabelProvider;
 import ch.elexis.util.viewers.SelectorPanelProvider;
@@ -272,7 +272,7 @@ public class BlockSelector extends CodeSelectorFactory {
 	};
 	
 	public static class bsPage extends cPage {
-		bsPage(CTabFolder ctab, CodeSelectorFactory cs){
+		public bsPage(CTabFolder ctab, CodeSelectorFactory cs){
 			super(ctab);
 			setLayout(new GridLayout());
 			cv = new CommonViewer();

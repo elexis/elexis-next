@@ -16,7 +16,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import ch.elexis.Hub;
-import ch.elexis.preferences.LabSettings;
+import ch.elexis.core.ui.preferences.LabSettings;
 import ch.elexis.preferences.PreferenceConstants;
 import ch.elexis.util.Log;
 import ch.rgw.tools.ExHandler;

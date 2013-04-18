@@ -17,13 +17,13 @@ import org.eclipse.ui.IFolderLayout;
 import org.eclipse.ui.IPageLayout;
 import org.eclipse.ui.IPerspectiveFactory;
 
-import ch.elexis.views.FallDetailView;
-import ch.elexis.views.KonsDetailView;
-import ch.elexis.views.PatHeuteView;
-import ch.elexis.views.PatientDetailView2;
-import ch.elexis.views.rechnung.KonsZumVerrechnenView;
-import ch.elexis.views.rechnung.RechnungsListeView;
-import ch.elexis.views.rechnung.RnDetailView;
+import ch.elexis.core.ui.views.FallDetailView;
+import ch.elexis.core.ui.views.KonsDetailView;
+import ch.elexis.core.ui.views.KonsZumVerrechnenView;
+import ch.elexis.core.ui.views.PatHeuteView;
+import ch.elexis.core.ui.views.PatientDetailView2;
+import ch.elexis.core.ui.views.RechnungsListeView;
+import ch.elexis.core.ui.views.RnDetailView;
 
 /**
  * Perspektive für Abrechnungen.

@@ -16,7 +16,7 @@ import org.eclipse.swt.SWT;
 import org.eclipse.ui.IPageLayout;
 import org.eclipse.ui.IPerspectiveFactory;
 
-import ch.elexis.views.BBSView;
+import ch.elexis.core.ui.views.BBSView;
 
 /**
  * Schwarzes Brett. Jeder angemeldete Anwender kann Themen eröffnen und/oder Anwprten zu schon

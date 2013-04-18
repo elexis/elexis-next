@@ -21,12 +21,12 @@ import org.eclipse.swt.widgets.Label;
 
 import ch.elexis.Desk;
 import ch.elexis.Hub;
+import ch.elexis.core.ui.misc.SWTHelper;
 import ch.elexis.data.Fall;
 import ch.elexis.data.Konsultation;
 import ch.elexis.data.Patient;
 import ch.elexis.data.Person;
 import ch.elexis.data.Query;
-import ch.elexis.util.SWTHelper;
 import ch.rgw.tools.TimeTool;
 
 import com.tiff.common.ui.datepicker.DatePicker;

@@ -280,12 +280,6 @@
       </command>
    </extension>
    <extension
-         point="org.eclipse.help.contexts">
-      <contexts
-            file="contexts.xml"
-            plugin="ch.elexis"/>
-   </extension>
-   <extension
          point="ch.elexis.core.data.KonsExtension">
       <Link
             KonsExtension="ch.elexis.text.XrefExtension"

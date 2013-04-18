@@ -6,10 +6,10 @@ import ch.elexis.Desk;
 import ch.elexis.Hub;
 import ch.elexis.actions.ElexisEvent;
 import ch.elexis.actions.ElexisEventListenerImpl;
+import ch.elexis.core.ui.misc.SWTHelper;
 import ch.elexis.data.Patient;
 import ch.elexis.data.Reminder;
 import ch.elexis.preferences.PreferenceConstants;
-import ch.elexis.util.SWTHelper;
 import ch.elexis.views.Messages;
 
 /**

@@ -24,8 +24,8 @@ import org.eclipse.ui.commands.ICommandService;
 import org.eclipse.ui.handlers.HandlerUtil;
 import org.eclipse.ui.handlers.IHandlerService;
 
+import ch.elexis.core.ui.dialogs.ArtikelDetailDialog;
 import ch.elexis.data.PersistentObject;
-import ch.elexis.dialogs.ArtikelDetailDialog;
 
 public class EditEigenartikelUi extends AbstractHandler {
 	

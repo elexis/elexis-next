@@ -16,20 +16,20 @@ import org.eclipse.ui.IFolderLayout;
 import org.eclipse.ui.IPageLayout;
 import org.eclipse.ui.IPerspectiveFactory;
 
-import ch.elexis.views.AUF2;
-import ch.elexis.views.FaelleView;
-import ch.elexis.views.FallDetailView;
-import ch.elexis.views.KompendiumView;
-import ch.elexis.views.KonsDetailView;
-import ch.elexis.views.KonsListe;
-import ch.elexis.views.LaborView;
-import ch.elexis.views.PatHeuteView;
-import ch.elexis.views.PatientDetailView2;
-import ch.elexis.views.PatientenListeView;
-import ch.elexis.views.RezepteView;
-import ch.elexis.views.TextView;
-import ch.elexis.views.codesystems.DiagnosenView;
-import ch.elexis.views.codesystems.LeistungenView;
+import ch.elexis.core.ui.views.AUF2;
+import ch.elexis.core.ui.views.DiagnosenView;
+import ch.elexis.core.ui.views.FaelleView;
+import ch.elexis.core.ui.views.FallDetailView;
+import ch.elexis.core.ui.views.KompendiumView;
+import ch.elexis.core.ui.views.KonsDetailView;
+import ch.elexis.core.ui.views.KonsListe;
+import ch.elexis.core.ui.views.LaborView;
+import ch.elexis.core.ui.views.LeistungenView;
+import ch.elexis.core.ui.views.PatHeuteView;
+import ch.elexis.core.ui.views.PatientDetailView2;
+import ch.elexis.core.ui.views.PatientenListeView;
+import ch.elexis.core.ui.views.RezepteView;
+import ch.elexis.core.ui.views.TextView;
 
 /**
  * Aufbau des initalen Layouts der "Patient"-Seite

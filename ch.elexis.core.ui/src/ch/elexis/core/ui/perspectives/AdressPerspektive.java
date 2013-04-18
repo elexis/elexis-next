@@ -16,8 +16,8 @@ import org.eclipse.ui.IFolderLayout;
 import org.eclipse.ui.IPageLayout;
 import org.eclipse.ui.IPerspectiveFactory;
 
-import ch.elexis.views.KontaktDetailView;
-import ch.elexis.views.KontakteView;
+import ch.elexis.core.ui.views.KontaktDetailView;
+import ch.elexis.core.ui.views.KontakteView;
 
 /**
  * Diese Perspektive erzeugt das Startlayout für den Auswahlknopf "Adressen" Funktion: Verknüpfung

@@ -15,3 +15,9 @@ NOT CONSIDERED TO BE PUBLIC YET
 	- merged CS [1615] fixed leak in MandantSelectionContributionItem
 	- merged CS [1347] fixed deselecting Konsultation in KonsDetailView
 	- moved perspectives to ch.elexis.core.ui
+-- COMMIT
+	- refactoring extension points in ch.elexis.core.data
+	- extraction of preferences, views, dialogs into ch.elexis.core.ui
+	- introduction of R.class
+	- moved preference constants defined in ui preference pages to PreferenceConstants
+-- COMMIT IN SEPARATE BRANCH -- does not compile at current state

@@ -34,11 +34,11 @@ import org.eclipse.ui.forms.widgets.ImageHyperlink;
 
 import ch.elexis.Desk;
 import ch.elexis.core.icons.Images;
+import ch.elexis.core.ui.misc.SWTHelper;
 import ch.elexis.data.PersistentObject;
 import ch.elexis.data.Query;
 import ch.elexis.text.ElexisText;
 import ch.elexis.util.Messages;
-import ch.elexis.util.SWTHelper;
 import ch.elexis.util.viewers.ViewerConfigurer.ControlFieldListener;
 import ch.elexis.util.viewers.ViewerConfigurer.ControlFieldProvider;
 import ch.rgw.tools.IFilter;

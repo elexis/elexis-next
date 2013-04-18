@@ -18,9 +18,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import ch.elexis.Hub;
+import ch.elexis.core.ui.misc.SWTHelper;
 import ch.elexis.preferences.PreferenceConstants;
 import ch.elexis.util.Log;
-import ch.elexis.util.SWTHelper;
 import ch.rgw.tools.Money;
 import ch.rgw.tools.StringTool;
 import ch.rgw.tools.TimeTool;

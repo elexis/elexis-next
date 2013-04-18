@@ -48,6 +48,7 @@ import ch.elexis.actions.ElexisEvent;
 import ch.elexis.actions.ElexisEventDispatcher;
 import ch.elexis.actions.ElexisEventListenerImpl;
 import ch.elexis.actions.ICodeSelectorTarget;
+import ch.elexis.core.ui.misc.SWTHelper;
 import ch.elexis.data.Anwender;
 import ch.elexis.data.ICodeElement;
 import ch.elexis.data.Kontakt;
@@ -58,7 +59,6 @@ import ch.elexis.preferences.PreferenceConstants;
 import ch.elexis.util.Extensions;
 import ch.elexis.util.Log;
 import ch.elexis.util.PersistentObjectDragSource;
-import ch.elexis.util.SWTHelper;
 import ch.elexis.util.viewers.CommonViewer;
 import ch.elexis.util.viewers.CommonViewer.DoubleClickListener;
 import ch.elexis.util.viewers.ViewerConfigurer;
@@ -185,7 +185,7 @@ public abstract class CodeSelectorFactory implements IExecutableExtension {
 		private ArrayList<PersistentObject> alPatient;
 		private ArrayList<PersistentObject> alUser;
 		private List lbPatientMFU, lbUserMFU;
-		CommonViewer cv;
+		public CommonViewer cv;
 		ViewerConfigurer vc;
 		int[] sashWeights = null;
 		ResizeListener resizeListener;
@@ -213,7 +213,7 @@ public abstract class CodeSelectorFactory implements IExecutableExtension {
 			super(ctab, SWT.NONE);
 		}
 		
-		cPage(final CTabFolder ctab, final ICodeElement codeElement,
+		public cPage(final CTabFolder ctab, final ICodeElement codeElement,
 			final CodeSelectorFactory codeSelectorFactory){
 			super(ctab, SWT.NONE);
 			template = codeElement;

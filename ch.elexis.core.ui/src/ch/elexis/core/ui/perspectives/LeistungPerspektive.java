@@ -15,8 +15,8 @@ import org.eclipse.swt.SWT;
 import org.eclipse.ui.IPageLayout;
 import org.eclipse.ui.IPerspectiveFactory;
 
-import ch.elexis.views.codesystems.CodeDetailView;
-import ch.elexis.views.codesystems.LeistungenView;
+import ch.elexis.core.ui.views.CodeDetailView;
+import ch.elexis.core.ui.views.LeistungenView;
 
 /**
  * Anzeige der Detailviews aller Leistungstypen.

@@ -24,9 +24,9 @@ import org.eclipse.ui.statushandlers.StatusManager;
 
 import ch.elexis.Hub;
 import ch.elexis.actions.ElexisEventDispatcher;
+import ch.elexis.core.ui.views.TemplatePrintView;
 import ch.elexis.data.Patient;
 import ch.elexis.status.ElexisStatus;
-import ch.elexis.views.TemplatePrintView;
 import ch.rgw.tools.ExHandler;
 import ch.rgw.tools.StringTool;
 

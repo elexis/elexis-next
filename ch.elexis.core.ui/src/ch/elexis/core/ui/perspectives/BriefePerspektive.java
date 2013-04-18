@@ -17,10 +17,10 @@ import org.eclipse.ui.IFolderLayout;
 import org.eclipse.ui.IPageLayout;
 import org.eclipse.ui.IPerspectiveFactory;
 
-import ch.elexis.views.BriefAuswahl;
-import ch.elexis.views.KonsDetailView;
-import ch.elexis.views.PatientDetailView2;
-import ch.elexis.views.TextView;
+import ch.elexis.core.ui.views.BriefAuswahl;
+import ch.elexis.core.ui.views.KonsDetailView;
+import ch.elexis.core.ui.views.PatientDetailView2;
+import ch.elexis.core.ui.views.TextView;
 
 public class BriefePerspektive implements IPerspectiveFactory {
 	public static final String ID = "ch.elexis.BriefePerspektive"; //$NON-NLS-1$

@@ -19,22 +19,22 @@ import java.util.List;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.wizard.WizardDialog;
 import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.application.IWorkbenchConfigurer;
 import org.eclipse.ui.application.IWorkbenchWindowConfigurer;
 import org.eclipse.ui.application.WorkbenchAdvisor;
 import org.eclipse.ui.application.WorkbenchWindowAdvisor;
+import org.eclipse.ui.handlers.IHandlerService;
 
 import ch.elexis.Hub.ShutdownJob;
 import ch.elexis.actions.GlobalActions;
 import ch.elexis.core.PersistenceException;
-
 import ch.elexis.data.Anwender;
 import ch.elexis.data.PersistentObject;
 import ch.elexis.data.Reminder;
 import ch.elexis.util.Log;
-import ch.elexis.wizards.DBConnectWizard;
 import ch.rgw.io.FileTool;
 import ch.rgw.tools.ExHandler;
 
@@ -187,8 +187,9 @@ public class ApplicationWorkbenchAdvisor extends WorkbenchAdvisor {
 			Messages.ApplicationWorkbenchAdvisor_2
 				+ PersistentObject.getConnection().lastErrorString);
 		PersistentObject.disconnect();
-		WizardDialog wd = new WizardDialog(loginshell, new DBConnectWizard());
-		wd.open();
+//		WizardDialog wd = new WizardDialog(loginshell, new DBConnectWizard());
+//		wd.open();
+		R.Command_DBConnect_WizardDialog();
 		Hub.localCfg.flush();
 		System.exit(-1);
 	}

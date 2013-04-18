@@ -20,7 +20,7 @@ import org.eclipse.swt.widgets.Menu;
 import org.eclipse.ui.IViewSite;
 import org.eclipse.ui.IWorkbenchActionConstants;
 
-import ch.elexis.actions.RestrictedAction;
+import ch.elexis.core.ui.actions.RestrictedAction;
 
 /**
  * This class simplifies the handling of menus and toolbars.

@@ -17,6 +17,7 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IConfigurationElement;
 
 import ch.elexis.actions.ElexisEventDispatcher;
+import ch.elexis.core.ui.misc.SWTHelper;
 import ch.elexis.data.Konsultation;
 import ch.elexis.data.PersistentObject;
 import ch.rgw.tools.ExHandler;

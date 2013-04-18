@@ -21,10 +21,10 @@ import org.eclipse.ui.statushandlers.StatusManager;
 
 import ch.elexis.Desk;
 import ch.elexis.Hub;
+import ch.elexis.core.ui.misc.SWTHelper;
 import ch.elexis.status.ElexisStatus;
 import ch.elexis.util.IKonsExtension;
 import ch.elexis.text.Messages;
-import ch.elexis.util.SWTHelper;
 import ch.rgw.tools.ExHandler;
 
 public class ExternalLink implements IKonsExtension {

@@ -28,7 +28,6 @@ import org.eclipse.jface.viewers.ViewerSorter;
 import ch.elexis.Desk;
 import ch.elexis.data.PersistentObject;
 import ch.elexis.data.Query;
-import ch.elexis.selectors.SelectorPanel;
 import ch.elexis.util.viewers.CommonViewer;
 import ch.elexis.util.viewers.SelectorPanelProvider;
 

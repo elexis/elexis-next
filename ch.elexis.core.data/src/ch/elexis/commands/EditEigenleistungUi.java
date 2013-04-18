@@ -24,9 +24,9 @@ import org.eclipse.ui.commands.ICommandService;
 import org.eclipse.ui.handlers.HandlerUtil;
 import org.eclipse.ui.handlers.IHandlerService;
 
+import ch.elexis.core.ui.dialogs.EigenLeistungDialog;
 import ch.elexis.data.IVerrechenbar;
 import ch.elexis.data.PersistentObject;
-import ch.elexis.dialogs.EigenLeistungDialog;
 
 public class EditEigenleistungUi extends AbstractHandler {
 	public static final String COMMANDID = "ch.elexis.eigenleistung.edit"; //$NON-NLS-1$
