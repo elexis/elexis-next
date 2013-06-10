@@ -13,8 +13,12 @@
 package ch.rgw.io;
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.Iterator;
+import java.util.prefs.BackingStoreException;
+import java.util.prefs.InvalidPreferencesFormatException;
 import java.util.prefs.Preferences;
 
 import ch.rgw.tools.ExHandler;
@@ -77,10 +81,19 @@ public class SysSettings extends Settings {
 	 *            Dateiname
 	 * @throws Exception
 	 */
-	public void write_xml(String file) throws Exception{
-		FileOutputStream os = new FileOutputStream(file);
-		getRoot().exportSubtree(os);
-		os.close();
+	public void write_xml(String file){
+		String errMsg = "\nSysSettings: Error writing: " + file;
+		try {
+			FileOutputStream os = new FileOutputStream(file);
+			getRoot().exportSubtree(os);
+			os.close();
+		} catch (FileNotFoundException e) {
+			log.warn(e.getMessage() + errMsg);
+		} catch (BackingStoreException e) {
+			log.warn(e.getMessage() + errMsg);
+		} catch (IOException e) {
+			log.warn(e.getMessage() + errMsg);
+		}
 	}
 	
 	/**
@@ -90,10 +103,20 @@ public class SysSettings extends Settings {
 	 *            Dateiname
 	 * @throws Exception
 	 */
-	public void read_xml(String file) throws Exception{
-		FileInputStream is = new FileInputStream(file);
-		Preferences.importPreferences(is);
-		is.close();
+	public void read_xml(String file){
+		FileInputStream is;
+		String errMsg = "\nSysSettings: Error reading: " + file;
+		try {
+			is = new FileInputStream(file);
+			Preferences.importPreferences(is);
+			is.close();
+		} catch (FileNotFoundException e) {
+			log.warn(e.getMessage() + errMsg);
+		} catch (InvalidPreferencesFormatException e) {
+			log.warn(e.getMessage() + errMsg);
+		} catch (IOException e) {
+			log.warn(e.getMessage() + errMsg);
+		}
 	}
 	
 	/**

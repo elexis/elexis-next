@@ -145,7 +145,7 @@ public class CfgSettings extends Settings {
 					}
 					String[] pair = line.split("=");
 					if (pair.length != 2) {
-						log.log("Format Error in config file " + filename, Log.ERRORS);
+						log.error("Format Error in config file " + filename);
 						continue;
 					}
 					set(pair[0].trim(), pair[1].trim());

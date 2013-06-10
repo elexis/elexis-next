@@ -1,0 +1,3 @@
+h1. System independent utilities
+
+Copied on 10.6.2013 from http://hg.code.sf.net/p/elexis/elexis-base/

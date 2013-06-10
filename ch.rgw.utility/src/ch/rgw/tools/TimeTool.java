@@ -116,7 +116,7 @@ public class TimeTool extends GregorianCalendar {
 	public static final int TIME_FULL = 2;
 	/** Constant indicating a small time format (hh:mm) */
 	public static final int TIME_SMALL = 3;
-	/** Constant indicating a date in german notation (dd.mm.yy) */
+	/** Constant indicating a date in german notation (dd.mm.yyyy) */
 	public static final int DATE_GER = 4;
 	
 	/** Constant indicating a full date/time format in ISO notation (yyyyy-MM-dd hh:mm:ss) */
@@ -141,6 +141,8 @@ public class TimeTool extends GregorianCalendar {
 	public static final int TIMESTAMP = 13;
 	/** Constant indicating an XML Datetime format (yyyy-MM-ddThh:mm:ss) */
 	public static final int DATETIME_XML = 14;
+	/** Constant indicating a date in german notation with two only to digits for year (dd.mm.yy) */
+	public static final int DATE_GER_SHORT = 15;
 	
 	private static final SimpleDateFormat full_ger = new SimpleDateFormat("dd.MM.yyyy, HH:mm:ss");
 	private static final SimpleDateFormat large_ger = new SimpleDateFormat("dd.MM.yyyy, HH:mm");
@@ -149,6 +151,7 @@ public class TimeTool extends GregorianCalendar {
 	private static final SimpleDateFormat full_mysql = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 	private static final SimpleDateFormat date_mysql = new SimpleDateFormat("yyyy-MM-dd");
 	private static final SimpleDateFormat date_ger = new SimpleDateFormat("dd.MM.yyyy");
+	private static final SimpleDateFormat date_ger_short = new SimpleDateFormat("dd.MM.yy");
 	// private static SimpleDateFormat full_compact=new SimpleDateFormat("ddMMyyyyHHmm");
 	private static SimpleDateFormat time_compact = new SimpleDateFormat("HHmm");
 	private static final SimpleDateFormat date_compact = new SimpleDateFormat("yyyyMMdd");
@@ -760,6 +763,9 @@ public class TimeTool extends GregorianCalendar {
 		// case FULL_COMPACT: res= full_compact.format(getTime()); break;
 		case TIMESTAMP:
 			res = timestamp.format(getTime());
+			break;
+		case DATE_GER_SHORT:
+			res = date_ger_short.format(getTime());
 			break;
 		default:
 			res = "00:00";

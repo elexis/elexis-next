@@ -44,8 +44,7 @@ public class InMemorySettings extends Settings {
 		for (int i = 0; i < preset.length; i++) {
 			String[] pair = preset[i].split(Messages.getString("InMemorySettings.1")); //$NON-NLS-1$
 			if (pair.length != 2) {
-				log.log(
-					Messages.getString("InMemorySettings.badDefinition") + preset[i], Log.ERRORS); //$NON-NLS-1$
+				log.error(Messages.getString("InMemorySettings.badDefinition") + preset[i]); //$NON-NLS-1$
 			}
 			set((pair[0]).trim(), pair[1].trim());
 		}

@@ -16,7 +16,7 @@ public class MimeTool {
 		{
 			"pdf", "application/pdf"
 		}, {
-			"ods", "application/vnd.oasis.opendocument.text"
+			"odt", "application/vnd.oasis.opendocument.text"
 		}, {
 			"jpg", "image/jpeg"
 		}, {

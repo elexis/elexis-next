@@ -20,7 +20,8 @@ import java.util.Hashtable;
 import java.util.Iterator;
 
 import ch.rgw.tools.ExHandler;
-import ch.rgw.tools.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import ch.rgw.tools.StringTool;
 import ch.rgw.tools.TimeTool;
 
@@ -40,14 +41,15 @@ public abstract class Settings implements Serializable, Cloneable {
 	
 	private static int SerializedVersion = 5;
 	private static final long serialVersionUID = 0xdcb17fe20021006L + SerializedVersion;
-	protected static final Log log;
+	protected static Logger log = null;
 	protected Hashtable node;
 	private volatile String path = null;
 	private volatile boolean dirty = false;
 	// protected String name;
 	
 	static {
-		log = Log.get("Settings");
+		if (log == null)
+			log = LoggerFactory.getLogger("Settings"); //$NON-NLS-1$
 	}
 	
 	protected Settings(){
@@ -101,7 +103,7 @@ public abstract class Settings implements Serializable, Cloneable {
 			return Double.parseDouble(res);
 		} catch (Exception ex) {
 			ExHandler.handle(ex);
-			log.log("Parse fehler f�r Double " + res, Log.ERRORS);
+			log.error("Parse fehler für Double " + res);
 			return defvalue;
 		}
 	}
@@ -276,27 +278,7 @@ public abstract class Settings implements Serializable, Cloneable {
 	}
 	
 	/**
-	 * Alle definierten Parameter und Werte ins Log ausgeben.
-	 * 
-	 * @param l2
-	 *            ein ch.rgw.tools.Log oder null (dann Ausgabe auf die Konsole)
-	 */
-	public void dump(Log l2){
-		ArrayList<String> keys = getAll();
-		
-		for (int i = 0; i < keys.size(); i++) {
-			String a = (String) keys.get(i);
-			if (l2 == null) {
-				System.out.print(a + "=" + get(a, "") + "\n");
-			} else {
-				l2.log(a + "=" + get(a, ""), Log.DEBUGMSG);
-			}
-		}
-		
-	}
-	
-	/**
-	 * Einen Fingerprint �ber alle Eintr�ge erstellen.<br>
+	 * Einen Fingerprint über alle Einträge erstellen.<br>
 	 * 
 	 * @param ex
 	 *            Eintrag, welcher nicht einbezogen wird
@@ -327,11 +309,11 @@ public abstract class Settings implements Serializable, Cloneable {
 	}
 	
 	/**
-	 * Den mit createHashCode erstellten Fingerprint �berpr�fen.
+	 * Den mit createHashCode erstellten Fingerprint überprüfen.
 	 * 
 	 * @param ex
-	 *            Eintrag, der den hashcode enth�lt
-	 * @return true bei �bereinstimmung
+	 *            Eintrag, der den hashcode enthült
+	 * @return true bei übereinstimmung
 	 */
 	public boolean checkHashCode(String ex){
 		long oldval = Long.parseLong(get(ex, "-1"));
@@ -343,7 +325,7 @@ public abstract class Settings implements Serializable, Cloneable {
 	 * Einen Integer-Wert setzen.
 	 * 
 	 * @param key
-	 *            Schl�ssel
+	 *            Schlüssel
 	 * @param value
 	 *            Wert
 	 */
@@ -355,7 +337,7 @@ public abstract class Settings implements Serializable, Cloneable {
 	 * Ein Rechteck eintragen.
 	 * 
 	 * @param key
-	 *            Schl�ssel
+	 *            Schlüssel
 	 * @param rec
 	 *            Wert
 	 */
@@ -372,7 +354,7 @@ public abstract class Settings implements Serializable, Cloneable {
 	 * Einen Datum/Zeitwert eintragen.
 	 * 
 	 * @param key
-	 *            Schl�ssel
+	 *            Schlüssel
 	 * @param d
 	 *            Datum/Zeit als ch.rgw.tools.timeTool
 	 */
@@ -381,10 +363,10 @@ public abstract class Settings implements Serializable, Cloneable {
 	}
 	
 	/**
-	 * Einen Schl�ssel entfernen.
+	 * Einen Schlüssel entfernen.
 	 * 
 	 * @param key
-	 *            der Schl�ssel
+	 *            der Schlüssel
 	 */
 	public void remove(String key){
 		Hashtable p = findParent(key, false);
@@ -398,9 +380,9 @@ public abstract class Settings implements Serializable, Cloneable {
 	 * Einen Integerwert auslesen.
 	 * 
 	 * @param key
-	 *            Schl�ssel
+	 *            Schlüssel
 	 * @param defvalue
-	 *            Defaultwert, falls der Schl�ssel nicht existiert
+	 *            Defaultwert, falls der Schlüssel nicht existiert
 	 * @return der Wert resp. der Defaultwet
 	 */
 	public int get(String key, int defvalue){
@@ -409,7 +391,7 @@ public abstract class Settings implements Serializable, Cloneable {
 			return Integer.parseInt(v);
 		} catch (Exception ex) {
 			ExHandler.handle(ex);
-			log.log("Int parse Fehler. Gebe Default zur�ck (" + defvalue + ")", 2);
+			log.debug("Int parse Fehler. Gebe Default zurück (" + defvalue + ")");
 			set(key, defvalue);
 			return defvalue;
 		}
@@ -419,9 +401,9 @@ public abstract class Settings implements Serializable, Cloneable {
 	 * Einen String auslesen, dabei alle \ nach / wandeln.
 	 * 
 	 * @param key
-	 *            Schl�ssel
+	 *            Schlüssel
 	 * @param defvalue
-	 *            Defaultwert, falls der Schl�ssel nicht existiert
+	 *            Defaultwert, falls der Schlüssel nicht existiert
 	 * @return Wert
 	 */
 	public String getQuoted(String key, String defvalue){
@@ -441,8 +423,8 @@ public abstract class Settings implements Serializable, Cloneable {
 	 * Einen Datum/Zeitwert auslesen.
 	 * 
 	 * @param key
-	 *            Schl�ssel
-	 * @return ein ch.rgw.timeTool oder null, wenn der Schl�ssel nicht existiert oder ein ung�ltiges
+	 *            Schlüssel
+	 * @return ein ch.rgw.timeTool oder null, wenn der Schlüssel nicht existiert oder ein ungültiges
 	 *         Format hat.
 	 */
 	public TimeTool getDate(String key){
@@ -461,9 +443,9 @@ public abstract class Settings implements Serializable, Cloneable {
 	 * Einen rechteck-Wert auslesen.
 	 * 
 	 * @param key
-	 *            Schl�ssel
-	 * @return das Rectangle oder null, wenn der Schl�ssel nicht existiert oder der Eintrag ein
-	 *         ung�ltiges Format hat.
+	 *            Schlüssel
+	 * @return das Rectangle oder null, wenn der Schlüssel nicht existiert oder der Eintrag ein
+	 *         ungültiges Format hat.
 	 */
 	public Rectangle get(String key){
 		String v = get(key, "");
