@@ -2,8 +2,8 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: MySQL JDBC Connector
 Bundle-SymbolicName: ch.elexis.mysql.connector
-Bundle-Version: 5.1.24
-Bundle-ClassPath: mysql-connector-java-5.1.24-bin.jar
+Bundle-Version: 5.1.25
+Bundle-ClassPath: mysql-connector-java-5.1.25-bin.jar
 Bundle-Vendor: dev.mysql.com
 Export-Package: com.mysql.jdbc;
   uses:="javax.naming,
