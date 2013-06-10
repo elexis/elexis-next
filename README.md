@@ -1,7 +1,7 @@
 elexis-next
 ===========
 
-Elexis Next Development (will become Elexis 2.3)
+Elexis Next Development (will become Elexis 3.0)
 
 NOT CONSIDERED TO BE PUBLICLY USED
 
